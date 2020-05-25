@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.side-ul li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.side-ul li:hover {
+  color: gray;
+}
+
+.current-link {
+  color: #779afc;
+}
