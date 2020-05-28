@@ -3,27 +3,43 @@
 @tailwind utilities;
 
 .side-ul li {
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .side-ul li:hover {
-  @apply text-gray-600;
+    @apply text-gray-600;
 }
 
 .current-link {
-  color: #779afc;
+    color: #779afc;
 }
 
 .control-btn {
-  @apply mr-2 flex items-center bg-white text-gray-800 text-sm font-semibold py-1 px-2 border border-gray-400 rounded;
+    @apply mr-2 flex items-center bg-white text-gray-800 text-sm font-semibold py-1 px-2 border border-gray-400 rounded;
 }
 
 .control-btn:hover {
-  @apply bg-gray-100;
+    @apply bg-gray-100;
 }
 
 .control-btn:focus {
-  @apply outline-none;
+    @apply outline-none;
+}
+
+.square {
+    box-shadow: 0 0 0 1px #6c6c6c;
+}
+
+.board {
+    gap: 1px;
+    border-color: #6c6c6c;
+    background: repeating-linear-gradient(
+        45deg,
+        #ebeaea,
+        #ebeaea 5px,
+        #f0f0f0 5px,
+        #f0f0f0 10px
+    );
 }

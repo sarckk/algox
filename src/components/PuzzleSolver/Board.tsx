@@ -1,30 +1,38 @@
 import React from "react";
 import { Square } from "./Square";
-import { shuffle } from "../../utils/shuffle";
 
 interface BoardProps {
     tiles: number[];
+    swapFn(index: number): void;
 }
 
 export class Board extends React.Component<BoardProps, {}> {
-    generateSquare(idx: number): JSX.Element {
-        return <Square key={idx} value={this.props.tiles[idx]} />;
+    generateSquare(value: number, index: number): JSX.Element {
+        return (
+            <Square
+                key={value}
+                value={value}
+                index={index}
+                swapFn={this.props.swapFn}
+            />
+        );
     }
 
     generateSquares() {
-        const numRows = Math.sqrt(this.props.tiles.length);
-        const numCols = numRows;
-
-        return [...Array(numRows)].map((r, rowIndex) => (
-            <div key={rowIndex}>
-                {[...Array(numCols)].map((c, colIndex) =>
-                    this.generateSquare(numCols * rowIndex + colIndex)
-                )}
-            </div>
-        ));
+        return this.props.tiles.map((value, index) =>
+            this.generateSquare(value, index)
+        );
     }
 
     render() {
-        return <>{this.generateSquares()}</>;
+        return (
+            <div
+                className={`board grid grid-cols-${Math.sqrt(
+                    this.props.tiles.length
+                )} border`}
+            >
+                {this.generateSquares()}
+            </div>
+        );
     }
 }
