@@ -1,19 +1,22 @@
 import { MinPQ } from "../MinPQ";
 
 describe("MinPQ", () => {
+    let mpq: MinPQ<number>;
+
+    beforeEach(() => {
+        mpq = new MinPQ<number>();
+    });
+
     it("isEmpty() returns false for non-empty PQ", () => {
-        let mpq = new MinPQ();
         mpq.insert(2);
         expect(mpq.isEmpty()).toBe(false);
     });
 
     it("isEmpty() returns true for empty PQ", () => {
-        let mpq = new MinPQ();
         expect(mpq.isEmpty()).toBe(true);
     });
 
     it("min() returns correct value", () => {
-        let mpq = new MinPQ();
         mpq.insert(2);
         mpq.insert(8);
         mpq.insert(4);
@@ -24,12 +27,10 @@ describe("MinPQ", () => {
     });
 
     it("min() doesnt' do anything if empty", () => {
-        let mpq = new MinPQ();
         expect(mpq.min()).toBe(undefined);
     });
 
     it("min() returns next smallest after delMin()", () => {
-        let mpq = new MinPQ();
         mpq.insert(2);
         mpq.insert(8);
         mpq.insert(4);
@@ -40,7 +41,6 @@ describe("MinPQ", () => {
     });
 
     it("delMin() returns correct value and deletes", () => {
-        let mpq = new MinPQ();
         let results = [];
 
         mpq.insert(2);
@@ -57,7 +57,6 @@ describe("MinPQ", () => {
     });
 
     it("delMin() doesn't do anything if empty", () => {
-        let mpq = new MinPQ();
         expect(mpq.delMin()).toBe(undefined);
     });
 });
