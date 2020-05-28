@@ -19,8 +19,8 @@ export const App = () => (
                     <h1 className="mb-1 text-2xl">
                         Algo<sup className="font-mono">x</sup>
                     </h1>
-                    <div className="mb-6 text-sm">Algorithms visualised</div>
-                    <ul className="side-ul text-xs font-mono">
+                    <div className="mb-6 text-xs">Algorithms visualised</div>
+                    <ul className="side-ul text-sm">
                         {listOfLinks.map((link, i) => (
                             <li key={`link${i}`}>
                                 <NavLink

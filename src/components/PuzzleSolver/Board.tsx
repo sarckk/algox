@@ -27,6 +27,7 @@ export class Board extends React.Component<BoardProps, {}> {
     render() {
         return (
             <div
+                data-testid="board"
                 className={`board grid grid-cols-${Math.sqrt(
                     this.props.tiles.length
                 )} border`}
