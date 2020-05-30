@@ -187,6 +187,10 @@ class PuzzleSolver extends React.Component<any, PuzzleSolverState> {
     }
 
     swap(index: number): void {
+        if (this.state.solverStatus === SolverStatus.SOLVING) {
+            return;
+        }
+
         const currentTiles = this.state.currentNode.tiles;
         const blankIndex = this.findBlankIndex(currentTiles);
 
