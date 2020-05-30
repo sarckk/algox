@@ -7,15 +7,15 @@ import {
 } from "react-router-dom";
 import PathfindingVisualizer from "./PathfindingVisualizer/PathfindingVisualizer";
 import SortingVisualizer from "./SortingVisualizer/SortingVisualizer";
-import PuzzleSolver from "./PuzzleSolver/PuzzleSolver";
+import PuzzleSolver from "./PuzzleSolver/controller/PuzzleSolver";
 
 export const listOfLinks = ["sorting", "pathfinding", "sliding-puzzle"];
 
 export const App = () => (
     <Router>
         <div className="flex h-screen justify-center">
-            <div className="flex py-20 w-7/12">
-                <aside className="pr-10">
+            <div className="flex py-20 w-5/6">
+                <aside className="pr-10 w-1/5">
                     <h1 className="mb-1 text-2xl">
                         Algo<sup className="font-mono">x</sup>
                     </h1>
@@ -33,7 +33,7 @@ export const App = () => (
                         ))}
                     </ul>
                 </aside>
-                <main className="py-2 w-2/3">
+                <main className="py-2 px-4 w-4/5">
                     <Switch>
                         <Route path="/sorting">
                             <SortingVisualizer />

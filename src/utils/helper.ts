@@ -1,3 +1,11 @@
+/**
+ * Useful helper utility functions
+ */
+
+export function arrayEquals(a: any[], b: any[]): boolean {
+    return a.every((elem, index) => elem === b[index]);
+}
+
 export function shuffle<T>(a: T[]): T[] {
     let newA = [...a];
 

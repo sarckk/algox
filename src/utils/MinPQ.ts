@@ -1,9 +1,13 @@
+import { Comparator } from "./interfaces";
+
 export class MinPQ<T> {
     private heap: T[];
+    private comparator: Comparator<T>;
 
-    constructor() {
+    constructor(comparator: Comparator<T>) {
         this.heap = [];
         this.heap.push(null);
+        this.comparator = comparator;
     }
 
     insert(key: T): void {
@@ -74,7 +78,8 @@ export class MinPQ<T> {
 
     // Array helper functions
     private greater(a: T, b: T): boolean {
-        return a > b;
+        const cmp = this.comparator.compare(a, b);
+        return cmp > 0;
     }
 
     private swap(from: number, to: number): void {

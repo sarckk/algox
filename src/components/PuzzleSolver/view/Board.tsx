@@ -1,5 +1,6 @@
 import React from "react";
 import { Square } from "./Square";
+import { wrapGrid } from "animate-css-grid";
 
 interface BoardProps {
     tiles: number[];
@@ -7,6 +8,20 @@ interface BoardProps {
 }
 
 export class Board extends React.Component<BoardProps, {}> {
+    boardRef: React.RefObject<any>;
+
+    constructor(props: BoardProps) {
+        super(props);
+        this.boardRef = React.createRef();
+    }
+
+    componentDidMount() {
+        wrapGrid(this.boardRef.current, {
+            easing: "easeOut",
+            duration: 100,
+        });
+    }
+
     generateSquare(value: number, index: number): JSX.Element {
         return (
             <Square
@@ -31,6 +46,7 @@ export class Board extends React.Component<BoardProps, {}> {
                 className={`board grid grid-cols-${Math.sqrt(
                     this.props.tiles.length
                 )} border`}
+                ref={this.boardRef}
             >
                 {this.generateSquares()}
             </div>

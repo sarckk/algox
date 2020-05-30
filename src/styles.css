@@ -43,3 +43,43 @@
         #f0f0f0 10px
     );
 }
+
+button:disabled,
+button[disabled] {
+    cursor: default;
+    @apply bg-gray-200 text-gray-400;
+}
+
+button:disabled:hover,
+button[disabled]:hover {
+    @apply bg-gray-200 text-gray-400;
+}
+
+.dot {
+    animation: disappear 1.5s infinite ease-out;
+}
+
+.first-dot {
+    margin-left: 1px;
+    animation-delay: 0s;
+}
+
+.second-dot {
+    animation-delay: 0.2s;
+}
+
+.third-dot {
+    animation-delay: 0.4s;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
