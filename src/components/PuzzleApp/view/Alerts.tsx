@@ -20,9 +20,11 @@ const Alert = ({ color, iconName, message }: AlertProps) => (
 const UnsolvableAlert = () => (
     <Alert color="red" iconName="error_outline" message="Board is unsolvable" />
 );
+
 const SolvableAlert = () => (
     <Alert color="blue" iconName="thumb_up" message="Board is solvable" />
 );
+
 const SolvedAlert = () => (
     <Alert color="green" iconName="done" message="Board solved" />
 );

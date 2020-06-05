@@ -1,4 +1,4 @@
-import { Comparator } from "./interfaces";
+import { Comparator } from "./types";
 
 export class MinPQ<T> {
     private heap: T[];

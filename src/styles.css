@@ -83,3 +83,7 @@ button[disabled]:hover {
         opacity: 1;
     }
 }
+
+.board-info-ul li {
+    margin-bottom: 0.5em;
+}

@@ -8,7 +8,7 @@ interface SquareState {
 
 export const Square = (props: SquareState) => (
     <div
-        className={`inline-flex justify-center text-sm items-center h-12 w-12 font-mono align-top ${
+        className={`inline-flex justify-center text-sm items-center h-16 w-16 font-mono align-top ${
             props.value === 0 ? "" : "bg-white square"
         }`}
         onClick={() => props.swapFn(props.index)}

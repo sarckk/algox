@@ -1,11 +1,16 @@
 import { MinPQ } from "../MinPQ";
-import { NumberComparator } from "../comparator";
 
 describe("MinPQ", () => {
     let mpq: MinPQ<number>;
 
     beforeEach(() => {
-        mpq = new MinPQ<number>(new NumberComparator());
+        mpq = new MinPQ<number>(
+            new (class {
+                compare(a: number, b: number) {
+                    return a - b;
+                }
+            })()
+        );
     });
 
     it("isEmpty() returns false for non-empty PQ", () => {

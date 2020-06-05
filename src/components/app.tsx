@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import PathfindingVisualizer from "./PathfindingVisualizer/PathfindingVisualizer";
 import SortingVisualizer from "./SortingVisualizer/SortingVisualizer";
-import PuzzleSolver from "./PuzzleSolver/controller/PuzzleSolver";
+import PuzzleApp from "./PuzzleApp/controller/PuzzleApp";
 
 export const listOfLinks = ["sorting", "pathfinding", "sliding-puzzle"];
 
@@ -42,7 +42,7 @@ export const App = () => (
                             <PathfindingVisualizer />
                         </Route>
                         <Route path="/sliding-puzzle">
-                            <PuzzleSolver />
+                            <PuzzleApp />
                         </Route>
                     </Switch>
                 </main>

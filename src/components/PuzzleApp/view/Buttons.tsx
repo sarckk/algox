@@ -1,5 +1,5 @@
 import React from "react";
-import { SolverStatus } from "../controller/PuzzleSolver";
+import { SolverStatus } from "../controller/PuzzleApp";
 
 interface ButtonsProps {
     isSolvable: boolean;
