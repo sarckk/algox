@@ -1,5 +1,6 @@
 import React from "react";
-import { SolverStatus } from "../controller/PuzzleApp";
+import { SolverStatus } from "..";
+import { Button } from "../../../utils/shared/Button";
 
 interface ButtonsProps {
     isSolvable: boolean;
@@ -16,23 +17,19 @@ export const Buttons = React.memo(
 
         return (
             <div className="flex flex-row mt-5 justify-center">
-                <button onClick={props.randBtnOnClick} className="control-btn">
-                    Randomize
-                </button>
-                <button
+                <Button clickFn={props.randBtnOnClick} txt="Randomize" />
+                <Button
+                    clickFn={props.solveBtnOnClick}
+                    txt="Solve"
+                    icon="play_arrow"
                     disabled={disableInteraction}
-                    onClick={props.solveBtnOnClick}
-                    className="control-btn"
-                >
-                    <i className="material-icons text-lg">play_arrow</i> Solve
-                </button>
-                <button
+                />
+                <Button
+                    clickFn={props.restartBtnOnClick}
+                    txt="Restart"
+                    icon="replay"
                     disabled={disableInteraction}
-                    onClick={props.restartBtnOnClick}
-                    className="control-btn"
-                >
-                    <i className="material-icons text-lg">replay</i> Restart
-                </button>
+                />
             </div>
         );
     }

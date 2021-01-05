@@ -1,5 +1,5 @@
 import React from "react";
-import PuzzleApp from "../controller/PuzzleApp";
+import PuzzleApp from "..";
 import { render, fireEvent } from "@testing-library/react";
 
 describe("Puzzle solver", () => {

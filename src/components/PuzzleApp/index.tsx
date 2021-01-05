@@ -1,14 +1,14 @@
 import React, { ChangeEvent } from "react";
-import { Selector } from "../view/Selector";
-import { Buttons } from "../view/Buttons";
-import { Board } from "../view/Board";
-import { setStateAsync, shuffle } from "../../../utils/helper";
-import { BoardInfo } from "../view/BoardInfo";
+import { Selector } from "./view/Selector";
+import { Buttons } from "./view/Buttons";
+import { Board } from "./view/Board";
+import { setStateAsync, shuffle } from "../../utils/helper";
+import { BoardInfo } from "./view/BoardInfo";
 import Confetti from "react-dom-confetti";
-import { Node } from "../model/Node";
-import { AlgorithmType, HeuristicType } from "../../../utils/types";
-import { PuzzleSolver } from "../model/PuzzleSolver";
-import { Move } from "../model/Move";
+import { Node } from "./model/Node";
+import { AlgorithmType, HeuristicType } from "../../utils/types";
+import { PuzzleSolver } from "./model/PuzzleSolver";
+import { Move } from "./model/Move";
 
 export enum SolverStatus {
     IDLE,

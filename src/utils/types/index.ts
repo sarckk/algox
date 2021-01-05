@@ -28,3 +28,9 @@ export type HeuristicFunction = (node: Node) => number;
 export interface Solver {
     solve(node: Node): Promise<[Node[], number]>;
 }
+
+export enum Orientation {
+    CCW = -1,
+    COLLINEAR = 0,
+    CW = 1,
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { UnsolvableAlert, SolvableAlert, SolvedAlert } from "./Alerts";
-import { SolverStatus } from "../controller/PuzzleApp";
+import { SolverStatus } from "..";
 import { SolvingProgressBar, AnimatingProgressBar } from "./ProgressBars";
 import { Move } from "../model/Move";
 

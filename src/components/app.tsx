@@ -6,10 +6,10 @@ import {
     NavLink,
 } from "react-router-dom";
 import PathfindingVisualizer from "./PathfindingVisualizer/PathfindingVisualizer";
-import SortingVisualizer from "./SortingVisualizer/SortingVisualizer";
-import PuzzleApp from "./PuzzleApp/controller/PuzzleApp";
+import PuzzleApp from "./PuzzleApp";
+import ConvexHullSolver from "./ConvexHullSolver";
 
-export const listOfLinks = ["sorting", "pathfinding", "sliding-puzzle"];
+export const listOfLinks = ["convex-hull", "pathfinding", "sliding-puzzle"];
 
 export const App = () => (
     <Router>
@@ -19,12 +19,13 @@ export const App = () => (
                     <h1 className="mb-1 text-2xl">
                         Algo<sup className="font-mono">x</sup>
                     </h1>
-                    <div className="mb-6 text-xs">Algorithms visualised</div>
+                    <div className="mb-6 text-xs">Algorithms explorer</div>
                     <ul className="side-ul text-sm">
                         {listOfLinks.map((link, i) => (
                             <li key={`link${i}`}>
                                 <NavLink
                                     to={`/${link}`}
+                                    className="block"
                                     activeClassName="current-link"
                                 >
                                     {link}
@@ -35,8 +36,8 @@ export const App = () => (
                 </aside>
                 <main className="py-2 px-4 w-4/5">
                     <Switch>
-                        <Route path="/sorting">
-                            <SortingVisualizer />
+                        <Route path="/convex-hull">
+                            <ConvexHullSolver />
                         </Route>
                         <Route path="/pathfinding">
                             <PathfindingVisualizer />
